@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "expo": "~50.0.13",
+    "expo-dev-client": "~3.3.10",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
-    "react-native": "0.73.5",
-    "expo-dev-client": "~3.3.10"
+    "react-native": "0.73.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4"
   },
   "private": true
 }

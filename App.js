@@ -1,7 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Pressable, ImageBackground } from 'react-native';
+import { fetchTracks } from './api';
 
 export default function App() {
+  const [tracks, setTracks] = useState([]);
+
+  const getTracks = async () => {
+    try {
+      const response = await fetchTracks();
+      setTracks(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getTracks();
+  }, []);
+
   return (
     <View style={styles.container}>
       <ImageBackground source={require('./assets/pitbullstudying_1.jpeg')} resizeMode='cover' style={styles.backgroundImage}>
